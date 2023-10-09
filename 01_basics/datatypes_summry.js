@@ -40,3 +40,27 @@ const heroes = ["Shktiman", "nagraj", "iornman"];
  console.log( typeof myFunction); // function = > function return is called object function
 
 //  https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+// ************Memory***********
+// Stack(primitive), Heap(Non-primitve)
+
+let myChannelName = "ashish82103";
+
+let anotherName = myChannelName;
+
+anotherName = "chiaUrCode";
+console.log(myChannelName); //ashish82103
+console.log(anotherName); //chaiURCode
+
+let userOne = {
+   email: "singhashish82103",
+   upiId: "user@ybl"
+}
+
+let userTwo = userOne;
+userTwo.email = "ashish82193";
+
+console.log(userOne.email); // ashish82103
+console.log(userTwo.email);// ashish82193
+

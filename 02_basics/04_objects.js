@@ -77,3 +77,33 @@ console.log(Object.values(tinderUser)); // [ '123abc', 'samy', false ]
 console.log(Object.entries(tinderUser)); // [ [ 'id', '123abc' ], [ 'name', 'samy' ], [ 'isLoggedIn', false ] ]
 
 console.log(tinderUser.hasOwnProperty('isLoggedIn')); // ture
+
+// ================Objects destructuring and JSON API===================
+
+const course = {
+    courseName: "JS- primitve",
+    price: "999",
+    courseInstructor: "XYZ"
+}
+// course.courseInstructor
+// const {courseInstructor} = course;
+// console.log(courseInstructor); // XYZ
+
+// ------change the variable name
+
+const {courseInstructor: insturctor} = course;
+console.log(insturctor); // XYZ
+
+// Jason-API(Application programming interface)
+// {
+//     "name": "Ashish",
+//     "course": "JS_Course";
+//     "price": "free"
+// }
+
+//-----------or this will be array format----------------
+[
+    {},
+    {},
+    {}
+]

@@ -36,7 +36,23 @@ if(userMail.length === 0) {
 
 const empObj = {};
 if (Object.keys(empObj).length === 0) {
-    console.log("objects is empty");
+    console.log("objects is empty"); // objects is empty
 }
 
-// Nullish coalescing operator(??)
+// Nullish coalescing operator(??): null. undefined
+
+let val1;
+// val1 = 5 ?? 10; // 5
+// val1 = null ?? 10; // 10
+// val1 = undefined ?? 15; // 15
+
+val1 = null ?? 10 ?? 15 // 10
+
+console.log(val1); 
+
+// ternairy operator
+
+// condition ? ture : false
+
+const iceTeaPrice = 100;
+iceTeaPrice <= 80 ? console.log("less than 80") :console.log("more than 80"); // more thna 80

@@ -55,8 +55,26 @@ map.set('Fr', "france");
 // }
 
 for (const [key, value] of map) {
-    console.log(key, ':-', value);      // In :- India  
+    // console.log(key, ':-', value);      // In :- India  
     //                                 //  USA :- United Sate america
     //                                  // Fr :- france
     
+}
+
+// const myObj = {
+//     'game1': "NFS",
+//     'game2': "spiderman"
+
+// }
+// for (const [key, value] of myObj) {
+//     console.log(key, ':-', value); // TypeError: myObj is not iterable
+// }
+
+const myObj = {
+    game1 : "NFS",
+    game2 : "spiderman"
+
+}
+for (const [key, value] of myObj) {
+    console.log(key, ':-', value); // TypeError: myObj is not iterable
 }

@@ -19,4 +19,43 @@
     </div>
     
 </body>
+
+<script>
+    document.querySelector('.parent');
+    const myList = document.querySelector('.parent');
+    // console.log(myList);
+    // console.log(myList.children);
+    // console.log(myList.children[1]);
+    // console.log(myList.children[1].innerHTML); // tuesday
+
+    // for (let i = 0; i < myList.children.length; i++) {
+    //     console.log(myList.children[i].innerHTML);
+
+    // } Monday,tuesday.....
+    myList.children[1].style.color = "orange";
+
+    // console.log(myList.firstElementChild); // <div class="day">Monday</div>
+
+    // console.log(myList.lastElementChild); //<div class="day">Sunday</div>
+
+    const dayOne = document.querySelector('.day');
+    // console.log(dayOne); // Monday
+
+    // console.log(dayOne.parentElement);
+
+    // console.log(dayOne.nextElementSibling); // tuesday
+
+    console.log("Nodes: ", myList.childNodes) // Node:ist(15)
+    // total 15 because of nodes is complex tree structure
+
+    
+
+
+
+
+</script>
+
+
+
+
 </html>

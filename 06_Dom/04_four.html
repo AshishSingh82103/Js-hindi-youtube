@@ -22,5 +22,42 @@
     addLanguage("python");
     addLanguage("type-Script"); 
 
+    // best way to create element (optimize- way)
+    
+    function addOptimizeLanguage (langName) {
+         const li = document.createElement('li');
+         li.appendChild(document.createTextNode(langName));
+         document.querySelector('.language').appendChild(li)
+
+    }
+    addOptimizeLanguage("go-lang")
+
+    // Edit value
+    document.querySelector("li:nth-child(2)")
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "mojo";
+
+    document.createElement('li');
+    const newli = document.createElement('li');
+    newli.textContent = "mojo";
+    secondLang.replaceWith(newli);
+
+    // edit
+    document.querySelector("li:first-child")
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Type-Script</li>'
+
+    // remove
+
+    const lastLang = document.querySelector('li:last-child');
+    lastLang.remove();
+
+
+
+
+
+
+
+
 </script>
 </html>

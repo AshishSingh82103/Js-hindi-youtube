@@ -8,6 +8,7 @@
 ##  project one
 
 ```javascript
+
 document.querySelectorAll('.button');
 const buttons = document.querySelectorAll('.button');
 
@@ -43,6 +44,11 @@ buttons.forEach(function (button) {
     
   });
 });
+
+
+```
+## Project - 2
+```javascript
 
 
 ```

@@ -5,7 +5,7 @@
 
 # Solution code
 
-##  project one
+##  project - 1 Solution code
 
 ```javascript
 
@@ -47,7 +47,7 @@ buttons.forEach(function (button) {
 
 
 ```
-## Project - 2
+## Project - 2 Solution code
 ```javascript
 document.querySelector('form');
 const forms = document.querySelector('form');
@@ -90,7 +90,7 @@ const bmi = (weight / ((height*weight)/10000)).toFixed(2);
 
 ```
 
-## Project - 3
+## Project - 3 Solution code
 ```javascript
 document.getElementById('clock');
 const clock = document.getElementById('clock');

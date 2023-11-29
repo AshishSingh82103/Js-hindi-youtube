@@ -89,3 +89,22 @@ const bmi = (weight / ((height*weight)/10000)).toFixed(2);
 })
 
 ```
+
+## Project - 3
+```javascript
+document.getElementById('clock');
+const clock = document.getElementById('clock');
+// or
+// document.querySelector('#clock')
+// const clock = document.querySelector('#clock');
+
+let date = new Date();
+console.log(date.toLocaleTimeString());
+
+setInterval(function() {
+  let date = new Date();
+// console.log(date.toLocaleTimeString()); it is given time in console
+clock.innerHTML = date.toLocaleTimeString();
+}, 1000)
+```
+

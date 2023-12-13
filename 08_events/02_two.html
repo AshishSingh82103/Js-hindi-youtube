@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="background-color: #414141; color: aliceblue;">
     <h1>Tcs Sample Java-Script(prompt Code)</h1>
     <button id="stop">Stop</button>
 </body>
 <script>
 
-    // function => setTimeOut 
+    // -----------function => setTimeOut -----------
     // it will execute in just one time and taking time after than reload it
 
     // setTimeout(function (){
@@ -21,13 +21,35 @@
     const sayAshish = function() {
         console.log('ashish')
     }
-    // setTimeout(sayAshish, 2000); 
 
+    // setTimeout(sayAshish, 2000);
+
+    // const changeText = function() {
+    //     document.querySelector('h1').innerHTML = "Java Script Set Time out"
+    // }
+    //  setTimeout(changeText, 2000);
+
+    // ---------clear time-out----------
+
+    // const changeText = function() {
+    //     document.querySelector('h1').innerHTML = "Java Script Set Time out"
+    // }
+    //  const changeMe = setTimeout(changeText, 2000);
+
+    // clearTimeout(changeMe); /// there is not a effective way
+   
     const changeText = function() {
-        document.querySelector('h1').innerHTML = "Java Script set time out"
+        document.querySelector('h1').innerHTML = "Java Script Set Time out"
     }
-    setTimeout(changeText, 2000);
-
+    const changeMe = setTimeout(changeText, 2000);
     
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe);
+        console.log("STOPPED");
+    })
+
+     
+
+
 </script>
 </html>

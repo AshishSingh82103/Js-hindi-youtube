@@ -66,5 +66,22 @@ promiseFour
 .catch(function(error){
     console.log(error);
 })
+
+// promise fifth
+
+const promiseFive = new promise(function(resolve, reject) {
+    setTimeout(function(){
+        let error = false;
+        if(!error) {
+            resolve({username: "java-script",
+                     password: "123" })
+        } else {
+            reject('Error: Js went worng')
+        }
+    }, 1000)
+})
+async function consumePromiseFive({
+    await promiseFive
+})
     
 

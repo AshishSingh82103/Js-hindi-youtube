@@ -1,4 +1,4 @@
-// // console.log('ashish');
+// console.log('ashish');
 // response is in then() and error is the catch() and is better tutorial is in finally()
 fetch('https://something.com').then().catch().finally()
 
@@ -48,7 +48,7 @@ const promiseFour = new Promise(function(resolve, reject) {
         if(!error) {
             resolve({username:"Ashish", password: "123"})
         } else {
-            reject('error something went wrong');
+            reject('Error: something went wrong');
         }
 
     }, 1000)
@@ -66,22 +66,28 @@ promiseFour
 .catch(function(error){
     console.log(error);
 })
+.finally(() => {
+    console.log("the promise either resolved or rejected");
+})
 
-// promise fifth
-
-const promiseFive = new promise(function(resolve, reject) {
+// promise No five
+const promiseFive = new Promise(function(resolve, reject) {
     setTimeout(function(){
         let error = false;
         if(!error) {
-            resolve({username: "java-script",
-                     password: "123" })
+            resolve({
+                username: "Java-Script",
+                password: "123"
+            })
         } else {
-            reject('Error: Js went worng')
+            reject('Error :Js went wrong')
         }
-    }, 1000)
-})
-async function consumePromiseFive({
-    await promiseFive
-})
-    
 
+    }, 1000)
+
+});     
+
+async function consumePromiseFive() {
+    const response = await promiseFive();
+    console.log(response);
+}

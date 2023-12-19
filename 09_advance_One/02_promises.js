@@ -93,16 +93,29 @@ async function consumePromiseFive() {
 }
 consumePromiseFive()
 
+
 // try catch method  syntax to extarct data fro Application programming language
-async function getAllUsers() {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        //response .jason take time convert so we do await for jason
-        const data =  await response.json();
-        console.log(data);
-        // console.log(response) it will work but format is not suitable
-    } catch (error) {
-        console.log("E: ", error);
-    }
-}
-getAllUsers()
+// async function getAllUsers() {
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         //response .jason take time convert so we do await for jason
+//         const data =  await response.json();
+//         console.log(data);
+//         // console.log(response) it will work but format is not suitable
+//     } catch (error) {
+//         console.log("E: ", error);
+//     }
+// }
+// getAllUsers()
+
+// above code we will wrtie to .then() and .catch() 
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data)
+})
+.catch((error) => {
+    console.log(error)
+})

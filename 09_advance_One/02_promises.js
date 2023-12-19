@@ -72,22 +72,36 @@ promiseFour
 
 // promise No five
 const promiseFive = new Promise(function(resolve, reject) {
-    setTimeout(function(){
-        let error = false;
+    setTimeout(function() {
+        let error = true;
         if(!error) {
-            resolve({
-                username: "Java-Script",
-                password: "123"
-            })
+            resolve({username: "java-script", password: "123"})
         } else {
-            reject('Error :Js went wrong')
+            reject('Error: js went worng')
         }
-
     }, 1000)
-
-});     
+})
 
 async function consumePromiseFive() {
-    const response = await promiseFive();
-    console.log(response);
+    try {
+        const response = await promiseFive
+        console.log(response);
+    } catch (error) {
+        console.log(error) 
+    }
+
 }
+consumePromiseFive()
+
+async function getAllUsers() {
+    try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        //response .jason take time convert so we do await for jason
+        const data =  await response.json();
+        console.log(data);
+        // console.log(response) itwill work but format is not suitable
+    } catch (error) {
+        console.log("E: ", error);
+    }
+}
+getAllUsers()

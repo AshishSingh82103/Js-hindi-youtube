@@ -114,5 +114,36 @@ promiseSeven.then(function(user3) {
     console.log('Promise either wwill be excute or will be rejected')
 })
 
+const PromiseEgiht = new Promise(function() {
+    setTimeout(function(){
+        console.log('async is completed')
+    }, 1000)
+})
+
+PromiseEgiht.then(function() {
+    console('task is completed');
+})
+
+new Promise(function() {
+    setTimeout(function() {
+        let error = false;
+        if(!error) {
+        resolve({
+            username: 'singhashish82103@gmail.com',
+            password: '******'
+        })
+        } else {
+            reject("code will be not execute")
+        }
+    }, 1000)
+})
+.then(function(user) {
+    console.log('https://api.github.com/users/ashishsingh82103')
+})
+try {
+    console.log("https://api.github.com/users/ashishsingh82103")
+} catch (error) {
+   console.log('code will be not execute');
+}
 
 

@@ -1,149 +1,126 @@
-// Resopnse is  then() and error is the catch() and is better tutorial is finally()
+// console.log('ashish');
+// response is in then() and error is the catch() and is better tutorial is in finally()
 fetch('https://something.com').then().catch().finally()
 
-// promise object
-// promise no.1 
-const promiseOne = new Promise(function(resolve, reject) {
-    // Do as a async Task
-    // Data base call, cryptography, network
-    setTimeout(function() {
-        console.log('Async task is complete');
-        // resolve connect after then wil execute
-        resolve();  
-    }, 1000);
-});
-promiseOne.then(function() {
-    console.log('Promise consumed');
-})
+// how to make promise is a object
+// promise no. 1
 
-// second way
-new Promise((resolve, reject) => {
+const promiseOne = new Promise(function(resolve, reject){
+    // Do an Async task
+    //Data base calls, cryptography, network
     setTimeout(function() {
-        console.log('Async Task is complete');
+        // console.log('Async task is compelete'); // Async task is compelete
+        // resolve connect with then after then will execute
         resolve();
-    }, 1000)
-})
-.then(function() {
-    console.log('Async task 2 is complete')
-})
+    }, 1000);
+    });
+    
+    promiseOne.then(function() {    
+        // console.log("Promised consumed"); // Promised consumed
+    })
+    
+    // other way to write the promise withou variable => second promise
+    new Promise(function(resolve, reject) {
+        setTimeout(function(){
+            // console.log("Async Task 2");
+            resolve();
+        }, 1000)
+    }).then(function() {
+        // console.log("Async Task 2 is resolve")
+    })
 
-// third - part
+
+// third promise = >  how to get the value
+
 const promiseThree = new Promise(function(resolve, reject) {
-    setTimeout(() => {
-        resolve({
-            username: 'Ashish', 
-            email: '123'
-        })
-
-    }, 1000);
-
+    setTimeout(function(){
+        resolve({userName:"chai", email: "chai@example.com"})
+    }, 1000)
 })
-promiseThree.then(function(user) {
+promiseThree.then(function(user){
     console.log(user);
 })
 
-const PromiseFour = new Promise(function(resolve, reject) {
-    setTimeout(function() {
-        resolve({
-            Username: 'login@7867',
-            Password: "Ashsish@82103 "
-        })
-    }, 1000)
-})
-PromiseFour.then(function(user1) {
-    console.log(user1);
-})
-
-const PromiseFive = new Promise((resolve, reject) => {
-    setTimeout(function() {
-        console.log('Async Two Tasl is complete')
-        resolve();
-    }, 1000)
-})
-PromiseFive.then(function() {
-    console.log('Task two is completed');
-})
-
-new Promise((resolve, reject) => {
+// fourth promise
+const promiseFour = new Promise(function(resolve, reject) {
     setTimeout(function(){
-        console.log('my hover buttun')
-    }, 1000)
-}).then(function() {
-    console.log('task is complete')
-})
-
-const promiseSix = new Promise(function(resolve, reject) {
-    setTimeout(function(){
-        resolve({
-            username: 'keyword',
-            api: "singhashish82103@gmail.com"
-        })
-
-    }, 1000)
-})
-promiseSix.then(function(user) {
-    console.log(user);
-})
-
-// fourth Promise
-
-const promiseSeven = new Promise(function(resolve, reject) {
-    setTimeout(() => {
         let error = false;
         if(!error) {
-            resolve({
-                userName:"Ashish",
-                 password: "123"
-            })
+            resolve({username:"Ashish", password: "123"})
         } else {
-            reject('Error got when code is not execute')
+            reject('Error: something went wrong');
         }
-    }, 1000);
+
+    }, 1000)
+}) 
+
+promiseFour
+.then((user) => {
+    console.log(user);
+    return user.username
 })
-promiseSeven.then(function(user3) {
-    console.log(user3)
-    return user.userName
+.then((username) =>{
+    console.log(username);
+
 })
-.then(function(userName) {
-    console.log(userName)
-})
-.catch(function(error) {
+.catch(function(error){
     console.log(error);
 })
-.finally(function() {
-    console.log('Promise either wwill be excute or will be rejected')
+.finally(() => {
+    console.log("the promise either resolved or rejected");
 })
 
-const PromiseEgiht = new Promise(function() {
-    setTimeout(function(){
-        console.log('async is completed')
-    }, 1000)
-})
-
-PromiseEgiht.then(function() {
-    console('task is completed');
-})
-
-new Promise(function() {
+// promise No five
+const promiseFive = new Promise(function(resolve, reject) {
     setTimeout(function() {
-        let error = false;
+        let error = true;
         if(!error) {
-        resolve({
-            username: 'singhashish82103@gmail.com',
-            password: '******'
-        })
+            resolve({username: "java-script", password: "123"})
         } else {
-            reject("code will be not execute")
+            reject('Error: js went worng')
         }
     }, 1000)
 })
-.then(function(user) {
-    console.log('https://api.github.com/users/ashishsingh82103')
-})
-try {
-    console.log("https://api.github.com/users/ashishsingh82103")
-} catch (error) {
-   console.log('code will be not execute');
+
+async function consumePromiseFive() {
+    try {
+        const response = await promiseFive
+        console.log(response);
+    } catch (error) {
+        console.log(error) 
+    }
+
+
 }
+consumePromiseFive()
+
+
+// try catch method  syntax to extarct data fro Application programming language
+// async function getAllUsers() {
+//     try {
+//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
+//         //response .jason take time convert so we do await for jason
+//         const data =  await response.json();
+//         console.log(data);
+//         // console.log(response) it will work but format is not suitable
+//     } catch (error) {
+//         console.log("E: ", error);
+//     }
+// }
+// getAllUsers()
+
+// above code we will wrtie to .then() and .catch() 
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then((response) => {
+//     return response.json()
+// })
+// .then((data) => {
+//     console.log(data)
+// })
+// .catch((error) => {
+//     console.log(error)
+// })
+
+// fetch our own github api
 
 

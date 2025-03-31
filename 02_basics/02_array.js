@@ -12,7 +12,7 @@ const dc_heroes = ["superman", "flash", "batman"];
 // console.log(all_heroes); // [ 'thor', 'Ironman', 'spiderman', 'superman', 'flash', 'batman' ]
 
 
-// best method to cobmbine the array in java scripts
+// best method to cobmbine the array in java scripts(spread opertor)
 const allNew_heroes = [...marvel_heroes, ...dc_heroes];
 console.log(allNew_heroes); // [ 'thor', 'Ironman', 'spiderman', 'superman', 'flash', 'batman' ]
 

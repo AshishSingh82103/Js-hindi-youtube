@@ -67,7 +67,7 @@ console.log(calculateCartPrice1(200, 100, 400)); // [ 200, 100, 400 ]
 function calculateCartPrice2(val1, val2, ...num1) {
 return num1;
 }
-console.log(calculateCartPrice2(200, 100, 400, 300, 700)); // [ 200, 100, 400 ]
+console.log(calculateCartPrice2(200, 100, 400, 300, 700)); // [ 400, 300, 700 ]
 
 const user = {
 username: "hitesh",
